@@ -32,5 +32,7 @@ test_prep = st.toggle("Completed Test Preperation Course", value=True)
 with open('model.pkl', 'rb') as file:
     data = pickle.load(file)
 
-model = data["model"]
-st.write(model.predict(pd.array([0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0]).reshape(1, -1)))
+coef = data["coefficients"]
+intercept = data["intercept"]
+
+st.write(sum(coef[0] * [0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0]) + intercept[0])
