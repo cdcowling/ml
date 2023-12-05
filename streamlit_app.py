@@ -29,7 +29,7 @@ lunch = st.toggle("Free/Reduced Lunch", value=False)
 
 test_prep = st.toggle("Completed Test Preperation Course", value=True)
 
-with open('model.pkl') as file:
+with open('model.pkl', 'rb') as file:
     data = pickle.load(file)
 
 model = data["model"]
