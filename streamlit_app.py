@@ -39,7 +39,6 @@ parental_education_int = optionToInt(parental_education, parental_education_list
 parental_education_array = intToArray(parental_education_int, len(parental_education_list))
 
 lunch = st.toggle("Free/Reduced Lunch", value=False)
-st.write(int(lunch))
 test_prep = st.toggle("Completed Test Preperation Course", value=True)
 
 with open('model.pkl', 'rb') as file:
@@ -55,5 +54,6 @@ array.append(int(test_prep))
 array += parental_education_array
 array += race_ethnicity_array
 
-st.write(array)
-st.write(sum(coef[0] * array) + intercept[0])
+st.write("### Math Score: ", str(sum(coef[0] * array) + intercept[0]))
+st.write("### Reading Score: ", str(sum(coef[1] * array) + intercept[1]))
+st.write("### Writing Score: ", str(sum(coef[2] * array) + intercept[2]))
