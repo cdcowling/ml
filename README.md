@@ -1,2 +1,2 @@
 # ml
-group project 
+* Streamlit is required for the website to run. *
